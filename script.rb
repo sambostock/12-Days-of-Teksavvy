@@ -16,6 +16,13 @@ sleep 0.5
 
 form = driver.find_element(:id, 'formParticipate')
 
+prize_info = form.find_element(:class, 'modal-lft-top')
+prize = prize_info.find_element(:tag_name, 'h2').text
+prize_details = prize_info.find_element(:tag_name, 'p').text
+
+puts prize
+puts prize_details
+
 email = form.find_element(:id, 'Email')
 email.send_keys EMAIL
 
